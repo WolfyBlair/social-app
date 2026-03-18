@@ -8,3 +8,11 @@ export function useHotkeysContext() {
     disableScope: () => {},
   }
 }
+
+export function useFeedKeyboardNav() {
+  return {
+    focusedIndex: -1,
+    setFocusedIndex: () => -1,
+    itemRef: () => () => {},
+  }
+}
