@@ -52,6 +52,7 @@ import {MessageItem as MessageItemDeprecated} from '#/components/dms/MessageItem
 import {NewMessagesPill} from '#/components/dms/NewMessagesPill'
 import {Loader} from '#/components/Loader'
 import {Text} from '#/components/Typography'
+import {useAnalytics} from '#/analytics'
 import {IS_NATIVE, IS_WEB} from '#/env'
 import {ChatStatusInfo} from './ChatStatusInfo'
 import {MessageInputEmbed, useMessageEmbed} from './MessageInputEmbed'
@@ -91,6 +92,7 @@ export function MessagesList({
   footer?: React.ReactNode
   hasAcceptOverride?: boolean
 }) {
+  const ax = useAnalytics()
   const convoState = useConvoActive()
   const agent = useAgent()
   const getPost = useGetPost()
