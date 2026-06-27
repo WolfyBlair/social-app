@@ -115,6 +115,7 @@ import {FollowingFeedPreferencesScreen} from '#/screens/Settings/FollowingFeedPr
 import {InterestsSettingsScreen} from '#/screens/Settings/InterestsSettings'
 import {LanguageSettingsScreen} from '#/screens/Settings/LanguageSettings'
 import {LegacyNotificationSettingsScreen} from '#/screens/Settings/LegacyNotificationSettings'
+import {NostrSettingsScreen} from '#/screens/Settings/NostrSettings'
 import {NotificationSettingsScreen} from '#/screens/Settings/NotificationSettings'
 import {PrivacyAndSecuritySettingsScreen} from '#/screens/Settings/PrivacyAndSecuritySettings'
 import {SettingsScreen} from '#/screens/Settings/Settings'
@@ -394,6 +395,14 @@ function commonScreens(Stack: typeof Flat, unreadCountLabel?: string) {
         getComponent={() => AppearanceSettingsScreen}
         options={{
           title: title(msg`Appearance`),
+          requireAuth: true,
+        }}
+      />
+      <Stack.Screen
+        name="NostrSettings"
+        getComponent={() => NostrSettingsScreen}
+        options={{
+          title: title(msg`Nostr`),
           requireAuth: true,
         }}
       />

@@ -130,6 +130,8 @@ const schema = z.object({
   mutedThreads: z.array(z.string()),
   trendingDisabled: z.boolean().optional(),
   trendingVideoDisabled: z.boolean().optional(),
+  /** Canonical hex Nostr public key the user has linked to their account. */
+  nostrPubkey: z.string().optional(),
 })
 export type Schema = z.infer<typeof schema>
 
@@ -177,6 +179,7 @@ export const defaults: Schema = {
   subtitlesEnabled: true,
   trendingDisabled: false,
   trendingVideoDisabled: false,
+  nostrPubkey: undefined,
 }
 
 export function tryParse(rawData: string): Schema | undefined {
